@@ -1,10 +1,11 @@
 #include<iostream>
+#include<string>
 using namespace std;
 
 struct EMP{
     int num;
     string nom;
-    float ven[12], sal;
+    float ven[12], sal, sv;
 };
 
 int main(){
@@ -19,11 +20,25 @@ int main(){
         cout<<"Nombre del empleado: ";
         getline(cin,EMPLEADOS[i].nom);
         cout<<"Ventas por mes: ";
+        cin>>EMPLEADOS[i].sv;
+        EMPLEADOS[i].sv=0;
         for(int j=0; j<12; j++){
             cin>>EMPLEADOS[i].ven[j];
+            EMPLEADOS[i].sv= EMPLEADOS[i].sv+EMPLEADOS[i].ven[j];
         }
         cout<<"Salario: ";
         cin>>EMPLEADOS[i].sal;
     }
+    int vm;
+    vm=0;
+    for(int i=1; i<n; i++){
+    	if(EMPLEADOS[i].sv > EMPLEADOS[vm].sv){
+    		vm= i;
+		}
+	}
+	cout<<"----------------------------------------------------------"<<endl;
+	cout<<"empleado con el mayor numero de ventas en el año: "<<endl;
+	cout<<"numero: "<<EMPLEADOS[vm].num<<endl;
+	cout<<"nombre: "<<EMPLEADOS[vm].nom<<endl;
     return 0;
 }
