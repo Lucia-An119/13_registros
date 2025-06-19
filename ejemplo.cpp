@@ -28,11 +28,17 @@ int main(){
         }
         cout<<"Salario: ";
         cin>>EMPLEADOS[i].sal;
+        if(EMPLEADOS[i].sv > 100){
+		    EMPLEADOS[i].sal= EMPLEADOS[i].sal*1.10;
+		    cout<<"----------------------------------------------------------"<<endl;
+	        cout<<"salario aumentado para empleado numero "<<EMPLEADOS[i].num<<endl;
+	        cout<<"salario actualizado: "<<EMPLEADOS[i].sal<<endl;
+        }
     }
     int vm;
     vm=0;
     for(int i=1; i<n; i++){
-    	if(EMPLEADOS[i].sv > EMPLEADOS[vm].sv){
+    	if(EMPLEADOS[i].sv > EMPLEADOS[vm].sv){git commit -m "aumento 10% de salario"
     		vm= i;
 		}
 	}
