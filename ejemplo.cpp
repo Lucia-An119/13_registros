@@ -34,6 +34,12 @@ int main(){
 	        cout<<"salario aumentado para empleado numero "<<EMPLEADOS[i].num<<endl;
 	        cout<<"salario actualizado: "<<EMPLEADOS[i].sal<<endl;
         }
+        if(EMPLEADOS[i].ven[11] < 30){
+		    cout<<"----------------------------------------------------------"<<endl;
+		    cout<<"empleado/os con ventas menor de 30"<<endl;
+	        cout<<"empleado numero: "<<EMPLEADOS[i].num<<endl;
+	        cout<<"nombre: "<<EMPLEADOS[i].nom<<endl;
+	    }
     }
     int vm;
     vm=0;
